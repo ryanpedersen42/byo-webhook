@@ -1,0 +1,56 @@
+version: 2.1
+
+jobs:
+  pr_job:
+    executor: base
+    steps:
+     name: Run steps
+     command : |
+      echo "running steps when PR is opened"
+
+  commit_job:
+    executor: base
+    steps:
+     name: Run steps
+     command : |
+      echo "running steps when it's a commit"
+
+workflows:
+  PR_workflow:
+    when: << pipeline.parameters.pr_webhook >>
+    jobs:
+      - pr_job
+
+  commit_workflow:
+    when: 
+      not: << pipeline.parameters.pr_webhook >>
+    jobs:
+      - commit_job
+
+executors:
+  base:
+    docker: 
+      - image: cimg/base:stable
+
+parameters:
+  pr_webhook:
+    type: boolean
+    default: false
+  pr_user:
+    type: string
+    default: "hueylewis"
+  pr_commit_message:
+    type: string
+    default: "the news"
+  pr_base:
+    type: string
+    default: "dev"
+  pr_sha:
+    type: string
+    default: "123"
+  pr_number:
+    type: integer
+    default: 1
+  pr_action:
+    type: string
+    default: "opened"
