@@ -2,7 +2,7 @@
 
 Tool to help ingest additional triggers / webhooks and kick off pipelines in CircleCI
 
-The app is making use of [https://github.com/octokit/webhooks.js/](Octokit Webhooks)
+The app is making use of [Octokit Webhooks](https://github.com/octokit/webhooks.js/)
 
 # Necessary Variables
 
