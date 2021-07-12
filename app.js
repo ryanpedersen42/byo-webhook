@@ -11,7 +11,7 @@ const webhooks = new Webhooks({
 // necessary vars
 const smeeURL = "your-smee-url" // https://smee.io/
 const circleToken = "your-circle-token" // https://app.circleci.com/settings/user/tokens
-const apiURL = "your-pipeline-api" // https://circleci.com/docs/api/v2/#operation/triggerPipeline
+const apiURL = "https://circleci.com/api/v2/project/gh/your-org-name/your-project-name/pipeline" // https://circleci.com/docs/api/v2/#operation/triggerPipeline
 
 const webhookProxyUrl = smeeURL; 
 const source = new EventSource(webhookProxyUrl);
