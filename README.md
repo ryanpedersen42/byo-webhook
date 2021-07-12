@@ -30,6 +30,10 @@ You will need to populate these in `app.js`
 * [CircleCI API Token](https://app.circleci.com/settings/user/tokens)
 * CircleCI pipeline API URL with your org and project name
 
+## Setting up in CircleCI
+
+Example config for your project located at `.circleci/config.yml`
+
 ## Using the app
 
 ```
